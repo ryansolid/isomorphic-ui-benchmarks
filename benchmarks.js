@@ -13,7 +13,9 @@ enabledLibs = {
   preact: true,
   react: true,
   vue: true,
-  inferno: true
+  inferno: true,
+  solid: true,
+  svelte: true
 };
 
 enabledBenchmarks = {

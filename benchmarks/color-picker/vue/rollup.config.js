@@ -1,13 +1,13 @@
-import commonjsPlugin from "rollup-plugin-commonjs";
-import nodeResolvePlugin from "rollup-plugin-node-resolve";
-import babelPlugin from "rollup-plugin-babel";
+import commonjsPlugin from "@rollup/plugin-commonjs";
+import nodeResolvePlugin from "@rollup/plugin-node-resolve";
+import babelPlugin from "@rollup/plugin-babel";
 import path from "path";
-import replace from "rollup-plugin-replace";
+import replace from "@rollup/plugin-replace";
 
 export default {
   input: path.join(__dirname, "client.jsx"),
   plugins: [
-    babelPlugin({ runtimeHelpers: true }),
+    babelPlugin({ babelHelpers: "bundled" }),
     nodeResolvePlugin({
       mainFields: ["browser", "module", "jsnext", "main"],
       preferBuiltins: false,

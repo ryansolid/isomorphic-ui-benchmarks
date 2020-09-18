@@ -1,6 +1,6 @@
-import commonjsPlugin from "rollup-plugin-commonjs";
-import nodeResolvePlugin from "rollup-plugin-node-resolve";
-import replace from "rollup-plugin-replace";
+import commonjsPlugin from "@rollup/plugin-commonjs";
+import nodeResolvePlugin from "@rollup/plugin-node-resolve";
+import replace from "@rollup/plugin-replace";
 import marko from "@marko/rollup";
 import path from "path";
 

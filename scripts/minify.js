@@ -16,9 +16,9 @@ function leftPad(str, padding) {
   return str;
 }
 
-function minifier(src, file) {
+async function minifier(src, file) {
   try {
-    var result = Terser.minify(src);
+    var result = await Terser.minify(src);
 
     if (result.error) {
       throw result.error;
@@ -69,11 +69,15 @@ benchmarks.forEach(benchmark => {
 
     var src = fs.readFileSync(inputFile, { encoding: "utf8" });
 
-    var minifiedSrc = minifier(src, inputFile);
+    var minifiedSrc;
 
-    console.log(`Done minifying ${inputFile}`);
-
-    fs.writeFileSync(outputFile, minifiedSrc, { encoding: "utf8" });
+    promiseChain = promiseChain.then(() => {
+      return minifier(src, inputFile).then(res => {
+        minifiedSrc = res;
+        console.log(`Done minifying ${inputFile}`);
+        fs.writeFileSync(outputFile, minifiedSrc, { encoding: "utf8" });
+      });
+    });
 
     var sizeInfo = (sizes[libName] = {});
 

@@ -1,5 +1,5 @@
-var Vue = require("vue");
-var App = require("./components/App");
+var Vue = require("vue").default;
+var App = require("./components/App").default;
 
 var mountNode = document.getElementById("mount");
 

@@ -24,7 +24,7 @@ module.exports = class extends Component {
 
   render() {
     var item = this.props.item;
-    var style = { backgroundColor: this.state.purchased ? "#f1c40f" : "" };
+    var style = { "background-color": this.state.purchased ? "#f1c40f" : "" };
 
     return (
       <div className="search-results-item" style={style}>
