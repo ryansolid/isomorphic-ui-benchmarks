@@ -1,4 +1,4 @@
-var app = require("./components/app");
+var app = require("./components/app").default;
 
 module.exports = function(getNextSearchResults) {
   return function benchFn() {

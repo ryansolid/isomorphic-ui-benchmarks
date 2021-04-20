@@ -1,4 +1,4 @@
-import { hydrate, render } from "solid-js/dom";
+import { hydrate, render } from "solid-js/web";
 import App from "./components/App";
 
 const mountNode = document.getElementById("mount");

@@ -4,7 +4,7 @@
   export let searchResultsData;
 </script>
 
-<div className="search-results">
+<div class="search-results">
   <div>
     {#each searchResultsData.items as item, i}
       <SearchResultsItem {item} />

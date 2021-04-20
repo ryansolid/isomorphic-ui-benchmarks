@@ -1,5 +1,6 @@
-const { renderToString } = require("solid-js/dom");
+const { renderToString } = require("solid-js/web");
 
 module.exports = function solidRender(App, colors) {
-  return renderToString(() => App({colors}));
+  const { html } = renderToString(() => App({colors}));
+  return html;
 };

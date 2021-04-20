@@ -1,4 +1,4 @@
-var app = require("./components/app");
+var app = require("./components/app").default;
 require("marko/components").init();
 
 window.addBench("marko", function(el, colors) {

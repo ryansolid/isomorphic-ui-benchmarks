@@ -25,6 +25,7 @@ export default [
     input: path.join(__dirname, "server.jsx"),
     plugins: [
       nodeResolvePlugin({
+        exportConditions: ["solid", "node"],
         extensions: [".js", ".jsx"]
       }),
       babelPlugin({
@@ -45,6 +46,7 @@ export default [
     input: path.join(__dirname, "components/App.jsx"),
     plugins: [
       nodeResolvePlugin({
+        exportConditions: ["solid", "node"],
         extensions: [".js", ".jsx"]
       }),
       babelPlugin({
